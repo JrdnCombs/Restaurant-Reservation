@@ -49,6 +49,7 @@
   "author": "Thinkful, Inc.",
   "license": "UNLICENSED",
   "dependencies": {
-    "knex": "^3.0.1"
+    "knex": "^3.0.1",
+    "run": "^1.4.0"
   }
 }
