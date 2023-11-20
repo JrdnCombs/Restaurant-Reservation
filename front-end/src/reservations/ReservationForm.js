@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 const ReservationForm = ({reservation, submitHandler, changeHandler, cancelHandler}) => {
 
   return (
@@ -41,7 +39,7 @@ const ReservationForm = ({reservation, submitHandler, changeHandler, cancelHandl
         </div>
         <div className="mb-3">
           <label className="form-label" htmlFor="mobile_number">
-            {" "}
+           {" "}
             Phone number:
           </label>
           <input
@@ -53,6 +51,8 @@ const ReservationForm = ({reservation, submitHandler, changeHandler, cancelHandl
             value={reservation.mobile_number}
             onChange={changeHandler}
             placeholder="123-456-7890"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            title="Please enter a valid phone number (e.g., 123-456-7890)"
           />
         </div>
         <div className="mb-3">
