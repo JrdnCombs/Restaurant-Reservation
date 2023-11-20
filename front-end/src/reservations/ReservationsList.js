@@ -25,7 +25,7 @@ const ReservationsList = ({reservations, date}) => {
             className="btn btn-primary"
             to={`/reservations/${reservation.reservation_id}/seat`}
           >
-            <span className="oi oi-people mr-2" />
+            <span className="oi oi-people mr-2 d-inline" />
             Seat
           </Link>
           )}
@@ -37,7 +37,7 @@ const ReservationsList = ({reservations, date}) => {
                   to={`/reservations/${reservation.reservation_id}/edit`}
                   className="btn btn-secondary"
                 >
-                <span className="oi oi-pencil mr-2" />
+                <span className="oi oi-pencil mr-2 d-inline" />
                 Edit
               </Link>
             </td>
