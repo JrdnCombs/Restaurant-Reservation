@@ -167,11 +167,29 @@ export async function updateReservationStatus(reservation_id, signal){
 
 //update reservation status to cancelled
 
-export async function cancelReservation(reservation_id, signal){
+export async function cancelReservation(reservation_id, signal) {
   const url = new URL(`${API_BASE_URL}/reservations/${reservation_id}/status`);
-  const options ={method: "PUT", headers, body:JSON.stringify({data: { status: "cancelled" } }), signal};
-  return await fetchJson(url, options)
+  const options = {
+    method: "PUT",
+    headers,
+    body: JSON.stringify({ data: { status: "cancelled" } }),
+    signal,
+  };
+
+  try {
+    const response = await fetchJson(url, options);
+    // Log the response for debugging
+    console.log("cancelReservation response:", response);
+
+    // Return the response or handle it as needed
+    return response;
+  } catch (error) {
+    // Log the error for debugging
+    console.error("cancelReservation error:", error);
+    throw error; // Rethrow the error to be caught by the caller
+  }
 }
+
 
 
 //deletes a table

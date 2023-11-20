@@ -19,13 +19,13 @@ const ReservationCancel = ({ reservation_id }) => {
       try {
         await cancelReservation(reservation_id, abortController.signal);
         // Update state or UI to reflect the cancellation if needed
-        window.location.reload();
       } catch (error) {
         if (error.name !== 'AbortError') {
           setError(error);
         }
       } finally {
         abortController.abort();
+        window.location.reload();
       }
     }
   };
